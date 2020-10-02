@@ -1,0 +1,33 @@
+{
+  "name": "learn-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webserver.js",
+  "dependencies": {
+    "feature-policy": "^0.3.0",
+    "foreachasync": "^3.0.0",
+    "formidable": "^1.2.2",
+    "forwarded": "^0.1.2",
+    "fresh": "^0.5.2",
+    "has-cors": "^1.1.0",
+    "has-symbols": "^1.0.1",
+    "helmet-crossdomain": "^0.4.0",
+    "helmet-csp": "^2.10.0",
+    "lite-server": "^2.5.4",
+    "static-server": "^2.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhtam12356/Learn-Html.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhtam12356/Learn-Html/issues"
+  },
+  "homepage": "https://github.com/minhtam12356/Learn-Html#readme"
+}

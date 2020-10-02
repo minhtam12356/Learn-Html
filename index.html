@@ -1,1 +1,24 @@
-hello world
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="foo">hello</p>
+    <p class="foo">hi</p>
+    <p class="fo">what's up</p>
+    <p class="foo">xin chào</p>
+    <button id="click" onclick="c()">Click</button>
+    <script>
+    	function c(){
+      	    var a = document.getElementsByTagName("p")
+            
+            for(var i = 0; i < a.length; i++){
+                if(a[i].getAttribute("class") === 'foo'){
+                a[i].innerHTML = a[i].textContent + " <a href='https://coders-x.com/' target='_blank'>Codersx</a>"
+            }}       
+      }
+    </script>
+</body>
+</html>

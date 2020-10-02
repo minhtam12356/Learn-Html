@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>
+    <input id="input" type="text" placeholder="input..."/>
+    <button id="but">Add</button>
+    <ul id="listItem">
+
+    </ul>
+    <script>
+        var inp = document.getElementById('input')
+        var but = document.getElementById('but')
+        var dataString = localStorage.getItem('String')
+        var todoList;
+        if(dataString){
+            todoList = JSON.parse(dataString)
+        }
+        else{
+            todoList = []
+        }
+        
+        but.addEventListener('click', addItem)
+        
+        function addItem(){
+            
+            todoList.push(inp.value);
+            render();
+            inp.value = '';
+            localStorage.setItem('String', JSON.stringify(todoList));
+        }
+        
+        function render(){
+            var listItem = document.getElementById('listItem')
+            var content = todoList.map(function(item){
+                return '<li>' + item + '</li>'
+            })
+            listItem.innerHTML = content.join('')
+        }
+        render()
+    </script>
+</body>
+</html>

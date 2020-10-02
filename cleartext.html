@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="searchBox" placeholder="Search..."/>
+    <button>Search</button>
+    <button>Clear</button>
+    <script>
+        var but = document.getElementsByTagName("button")
+        var ins = document.getElementById("searchBox")
+        for (var i = 0; i < but.length; i++){           
+            if(but[i].textContent === "Clear"){
+                console.log(but[i], ins)
+                but[i].setAttribute("onclick", "clearx()")             
+        }
+        }
+        function clearx(){
+            ins.value = ''
+        }
+    </script>
+</body>
+</html>

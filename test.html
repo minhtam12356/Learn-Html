@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="2; url=http://google.com">
+    
+    
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            float: left;
+            width: 33.33%;
+            padding: 20px;
+            text-align: center;
+            
+        }
+        .zing a:link{
+            text-decoration: none;
+        }
+        .zing{
+            float: left;
+            margin: 10px;
+            font-size: 30px;
+            background-color: blueviolet;
+            padding: 20px;
+            
+        }
+        .e:hover{
+            color: red;
+            background-color: transparent;
+        }
+        .e:active{
+            color: red;
+            background-color: transparent;
+        }
+        body{
+            background-image: url('https://vietmosfarm.com/wp-content/uploads/2019/11/ky-thuat-nuoi-heo-nai-theo-giai-doan.jpg') ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+        }
+        li a:link{
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        li{
+            float: left;
+            background-color: rgb(142, 155, 155);
+            list-style-type: none;
+            color: black;   
+               
+        }
+        li:hover{
+            background-color: rgb(132, 144, 146);
+        }
+        li a:visited{
+            color: black;
+        }
+        li a:active{
+            color: yellow;
+            background-color: transparent;
+        }
+        li a{
+            color: blue;
+            overflow: auto;
+            padding: 30px;
+            display: block;
+        } 
+        .p{
+            overflow: auto;
+            border: green solid 5px ;
+        }
+        ul{
+            overflow: auto;
+            background-color: aquamarine;
+        }
+    </style>
+    <script>
+        function a(){
+          alert("hello")
+        }
+      </script>
+</head>
+<body>
+    
+    <div class="zing">
+        <a href="https://zingmp3.vn/" target="_blank">zing mp3</a>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="box" style="background-color:#bbb">
+        <p>1</p>
+    </div>
+    <div class="box" style="background-color:rgb(100, 16, 16)">
+        <p>2</p>
+    </div>
+    <div class="box" style="background-color:rgb(73, 39, 199)">
+        <p>3</p>
+    </div>
+    <br><br><br><br><br><br><br>
+    <div class="d">
+        <img class="img" src="data:image/jpeg;base64,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">hình nằm trong
+    </div>
+    <div class="e">
+        <img src="https://nhandaovadoisong.com.vn/wp-content/uploads/2019/05/hinh-anh-hoat-hinh-de-thuong-29.jpg" alt="doraemon" style="width: 290px; height: 180px;" usemap="#doraemon">
+        <map name="doraemon">
+            <area shape="circle" coords="119,66,8" href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_images_map2">
+        </map>
+    </div>
+    <div class="p">
+        <h1>List</h1>
+        <p>List above:</p>
+        <ul>
+            <li><a href="https://www.google.com.vn/" target="_blank">Name</a></li>
+            <li><a href="https://www.google.com.vn/" target="_blank">Age</a></li>
+            <li><a href="https://www.google.com.vn/" target="_blank">Gender</a></li>            
+        </ul>
+    </div>
+    <div>
+      <button onclick="a()">Click</button>
+    </div>
+    
+    <div>
+        <iframe src="https://translate.google.com/?hl=vi" style="width: 300px;height: 300px;border: none;position: absolute;left: 300px;" name="abc"></iframe>
+        <p><a href="http://webcoban.vn/html/cach-tao-mot-cai-ban-do-hinh-anh-image-map-trong-html.html" target="abc">gg</a></p>
+    </div>
+</body>
+</html>
+
