@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <input type="text" id="inp" placeholder="Input your name">
+    <button id="but">Save</button>
+    <ul id="listItem">
+        
+    </ul>
+    <script>
+        
+        
+        var url = "http://localhost:3000/post/"
+        var listItem = document.getElementById("listItem")
+        var but = document.getElementById("but")
+        var inp = document.getElementById("inp")
+        var todolist = []
+        var num = parseInt((location.hash).slice(1))
+        axios.get(url).then(function(item){ 
+            arr = item.data     
+            var c = arr.find(function(item){
+                return item.id == num
+            })
+            todolist.push(c)
+            render()
+        })
+
+        but.addEventListener('click', save)
+        function save(){
+            axios.put(url+num, {name : inp.value}).then(function(){
+                console.log('ok')
+            })
+            window.location.href = './new-item.html'
+        }
+     
+        function render(){
+            var a = todolist.map(function(item){
+                inp.value = item.name
+                return '<li data-id = ' + item.id + '>' + item.name + '</li>'
+            })
+            listItem.innerHTML = a.join('')
+            
+        }
+        render()
+    </script>
+</body>
+</html>

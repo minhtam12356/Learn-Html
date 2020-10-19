@@ -14,31 +14,40 @@
     <script>
         var inp = document.getElementById('input')
         var but = document.getElementById('but')
-        var dataString = localStorage.getItem('String')
+        var list = document.getElementById('listItem')
+        but.addEventListener('click', addItem)
         var todoList;
+        
+        var dataString = localStorage.getItem('String')
         if(dataString){
             todoList = JSON.parse(dataString)
         }
         else{
             todoList = []
         }
-        
-        but.addEventListener('click', addItem)
-        
+        //Add item
         function addItem(){
-            
-            todoList.push(inp.value);
-            render();
-            inp.value = '';
-            localStorage.setItem('String', JSON.stringify(todoList));
+            todoList.push(inp.value)
+            localStorage.setItem('String', JSON.stringify(todoList))
+            render()
         }
-        
+
+        //Delete item
+        list.addEventListener('click', deleteItem)
+        function deleteItem(item){
+            var butTarget = item.target;
+            todoList.splice(butTarget.dataset.id, 1)
+            localStorage.setItem('String', JSON.stringify(todoList))
+            render()
+        }
+
         function render(){
-            var listItem = document.getElementById('listItem')
-            var content = todoList.map(function(item){
-                return '<li>' + item + '</li>'
+            var a =  todoList.map(function (item, i){
+                return '<li>' + item + ' <button data-id = ' + i + '>Delete</button></li>'
             })
-            listItem.innerHTML = content.join('')
+            list.innerHTML = a.join('')
+            inp.value = ''
+            inp.focus()
         }
         render()
     </script>

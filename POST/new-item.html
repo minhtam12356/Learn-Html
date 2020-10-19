@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <input type="text" id="inp" placeholder="Input your name">
+    <button id="but">Add</button>
+    <ul id="listItem">
+
+    </ul>
+    <script>
+        
+        
+        var url = "http://localhost:3000/post/"
+        var listItem = document.getElementById("listItem")
+        var but = document.getElementById("but")
+        var inp = document.getElementById("inp")
+
+        axios.get(url).then(function(item){
+            todolist = item.data
+            render()
+        })
+
+        //Add
+        but.addEventListener('click', addItem)
+        function addItem(){
+            axios.post(url, {name : inp.value})
+            render()
+            window.location.href = './post.html'
+        }
+
+        //Delete
+        listItem.addEventListener('click', deleteItem)
+        function deleteItem(item){
+            var butTarget = item.target.dataset.name
+            var butTarget1 = item.target.dataset.id
+            if (butTarget){
+                var urlDelete = 'http://localhost:3000/post?name=' + butTarget
+                var urlDel;
+                axios.get(urlDelete).then(function(item){
+                    urlDel = item.data[0].id
+                })
+                .then(function(){
+                    axios.delete(url + urlDel).then(function(){
+                    render()
+                })
+                })
+            }
+            else if (butTarget1){
+                window.location.href = './edit-item.html#' + butTarget1
+            }
+            
+        }
+
+        
+        
+
+        function render(){
+            var a = todolist.map(function(item){
+                return '<li>' + item.name + '  <button data-id = ' + item.id + '>Edit</button> <button data-name= ' + item.name + '>Delete</button></li>'
+            })
+            listItem.innerHTML = a.join('')
+        }
+        render()
+    </script>
+</body>
+</html>
