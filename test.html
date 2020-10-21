@@ -3,9 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="200; url=http://google.com">
-    <link rel="stylesheet" href="test.css">
+    <meta http-equiv="refresh" content="2; url=http://google.com">
+    
+    
     <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            float: left;
+            width: 33.33%;
+            padding: 20px;
+            text-align: center;
+            
+        }
+        .zing a:link{
+            text-decoration: none;
+        }
+        .zing{
+            float: left;
+            margin: 10px;
+            font-size: 30px;
+            background-color: blueviolet;
+            padding: 20px;
+            
+        }
+        .e:hover{
+            color: red;
+            background-color: transparent;
+        }
+        .e:active{
+            color: red;
+            background-color: transparent;
+        }
+        body{
+            background-image: url('https://vietmosfarm.com/wp-content/uploads/2019/11/ky-thuat-nuoi-heo-nai-theo-giai-doan.jpg') ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+        }
+        li a:link{
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        li{
+            float: left;
+            background-color: rgb(142, 155, 155);
+            list-style-type: none;
+            color: black;   
+               
+        }
+        li:hover{
+            background-color: rgb(132, 144, 146);
+        }
+        li a:visited{
+            color: black;
+        }
+        li a:active{
+            color: yellow;
+            background-color: transparent;
+        }
+        li a{
+            color: blue;
+            overflow: auto;
+            padding: 30px;
+            display: block;
+        } 
+        .p{
+            overflow: auto;
+            border: green solid 5px ;
+        }
+        ul{
+            overflow: auto;
+            background-color: aquamarine;
+        }
+    </style>
     <script>
         function a(){
           alert("hello")
@@ -55,81 +130,5 @@
         <p><a href="http://webcoban.vn/html/cach-tao-mot-cai-ban-do-hinh-anh-image-map-trong-html.html" target="abc">gg</a></p>
     </div>
 </body>
-</html>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-performance.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-firestore.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <input type="text" id="inp" placeholder="Write text..."/>
-    <button id="but">Add</button>
-    <ul id="listItem"></ul>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        
-        var inp = document.getElementById('inp')
-        var but = document.getElementById('but')
-        var listItem = document.getElementById('listItem')
-
-        //cloud firestore
-        var db = firebase.firestore();
-        db.collection("todolist").get().then(function(snap){
-          render(snap.docs)
-          
-        })
-        // but.addEventListener('click', add)
-        // //Add item
-        // function add(){
-        //   arr.push(inp.value);
-        //   render()
-        // }
-        function render(items)
-        {      
-          var a = items.map(function(item){
-            return '<li>' + item.data().name + '</li>'
-          })
-          listItem.innerHTML = a.join('');
-          inp.value = '';
-          
-        }
-        
-      });
-    </script>
-  </body>
 </html>
 

@@ -13,7 +13,6 @@
     "has-symbols": "^1.0.1",
     "helmet-crossdomain": "^0.4.0",
     "helmet-csp": "^2.10.0",
-    "json-server": "^0.16.2",
     "lite-server": "^2.5.4",
     "static-server": "^2.2.1"
   },
