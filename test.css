@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    float: left;
+    width: 33.33%;
+    padding: 20px;
+    text-align: center;
+    
+}
+.zing a:link{
+    text-decoration: none;
+}
+.zing{
+    float: left;
+    margin: 10px;
+    font-size: 30px;
+    background-color: blueviolet;
+    padding: 20px;
+    
+}
+.e:hover{
+    color: red;
+    background-color: transparent;
+}
+.e:active{
+    color: red;
+    background-color: transparent;
+}
+body{
+    background-image: url('https://vietmosfarm.com/wp-content/uploads/2019/11/ky-thuat-nuoi-heo-nai-theo-giai-doan.jpg') ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+li a:link{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+li{
+    float: left;
+    background-color: rgb(142, 155, 155);
+    list-style-type: none;
+    color: black;   
+       
+}
+li:hover{
+    background-color: rgb(132, 144, 146);
+}
+li a:visited{
+    color: black;
+}
+li a:active{
+    color: yellow;
+    background-color: transparent;
+}
+li a{
+    color: blue;
+    overflow: auto;
+    padding: 30px;
+    display: block;
+} 
+.p{
+    overflow: auto;
+    border: green solid 5px ;
+}
+ul{
+    overflow: auto;
+    background-color: aquamarine;
+}

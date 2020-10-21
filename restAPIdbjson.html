@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        var url ="http://localhost:3000/posts"
+
+        //Lấy dữ liệu
+        axios.get(url).then(function(res){
+            document.write(JSON.stringify(res.data))
+        })
+
+        //Thêm mới dữ liệu
+        axios.post(url, {name:'tam',id:4}).then(function(res){
+            document.write(JSON.stringify(res.data))
+        })
+
+        //Cập nhật dữ liệu
+        axios.put("http://localhost:3000/posts/4", {name:'hoa'}).then(function(res){
+            document.write(JSON.stringify(res.data))
+        })
+
+        //Cập nhật dữ liệu
+        axios.patch("http://localhost:3000/posts/3", {name:'hoa'}).then(function(res){
+            document.write(JSON.stringify(res.data))
+        })
+
+        //Xoá dữ liệu
+        axios.delete("http://localhost:3000/posts/5").then(function(res){
+            document.write(JSON.stringify(res.data))
+        })
+    </script>
+</body>
+</html>

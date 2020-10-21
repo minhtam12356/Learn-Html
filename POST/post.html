@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <a href="./new-item.html">new-item</a>
+    <ul id="listItem">
+
+    </ul>
+    <script>
+        var todolist = [];
+        var url = "http://localhost:3000/post"
+        var listItem = document.getElementById("listItem")
+        axios.get(url).then(function(item){
+            todolist = item.data
+            render()
+        })
+        function render(){
+            var a = todolist.map(function(item){
+                return '<li>' + item.name + '</li>'
+            })
+            listItem.innerHTML = a.join('')
+            
+        }
+        render()
+    </script>
+</body>
+</html>
